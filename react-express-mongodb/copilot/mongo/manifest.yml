@@ -1,0 +1,15 @@
+name: mongo
+type: Backend Service
+image:
+    location: mongo:4.2.0
+    port: 27017
+cpu: 256
+memory: 512
+count: 1
+exec: true
+storage:
+  volumes:
+    data:
+      path: /data/db
+      efs: true
+      read_only: false

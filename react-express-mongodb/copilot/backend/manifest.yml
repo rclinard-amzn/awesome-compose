@@ -1,0 +1,12 @@
+name: backend
+type: Backend Service
+image:
+    build:
+        context: backend
+        dockerfile: Dockerfile
+        target: development
+    port: 3000
+cpu: 256
+memory: 512
+count: 1
+exec: true

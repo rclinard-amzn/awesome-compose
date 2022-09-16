@@ -1,0 +1,20 @@
+name: frontend
+type: Load Balanced Web Service
+image:
+    build:
+        context: frontend
+        dockerfile: Dockerfile
+        target: development
+    port: 3000
+cpu: 256
+memory: 512
+count: 1
+exec: true
+
+# Distribute traffic to your service.
+http:
+  # Requests to this path will be forwarded to your service.
+  # To match all requests you can use the "/" path.
+  path: '/'
+  # You can specify a custom health check path. The default is "/".
+  # healthcheck: '/'
